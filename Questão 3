@@ -13,7 +13,6 @@ def adicionar_gostos(pessoas: list, gostos: list):
     return pessoas[:5]
 
 
-
 def criar_pessoa(nome: str, idade: int, id: int):
     return {"id": id, "nome": nome, "idade": idade}
 
