@@ -1,0 +1,7 @@
+def top_tres_maiores(numeros: list[int]) -> list[int]:
+  """Três maiores números."""
+  numeros.sort(reverse=True)
+  return numeros[:3]
+
+resultado = top_tres_maiores([42, 12, 9, 73, 51, 22])
+print(resultado)
