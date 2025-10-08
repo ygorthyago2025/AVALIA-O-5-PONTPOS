@@ -1,0 +1,41 @@
+def adicionar_gostos(pessoas: list, gostos: list):
+   
+    mapa_gostos = {g["id"]: g["gostos"] for g in gostos}
+
+    for pessoa in pessoas:
+        id_pessoa = pessoa["id"]
+        if id_pessoa in mapa_gostos:
+            pessoa["gostos"] = mapa_gostos[id_pessoa]
+        else:
+            pessoa["gostos"] = []  # caso não haja gostos correspondentes
+
+   
+    return pessoas[:5]
+
+
+
+def criar_pessoa(nome: str, idade: int, id: int):
+    return {"id": id, "nome": nome, "idade": idade}
+
+
+pessoas = [
+    criar_pessoa("Marcos", 28, 1),
+    criar_pessoa("Ana", 24, 2),
+    criar_pessoa("Carlos", 30, 3),
+    criar_pessoa("Julia", 22, 4),
+    criar_pessoa("Pedro", 27, 5),
+    criar_pessoa("Laura", 26, 6)
+]
+
+gostos = [
+    {"id": 1, "gostos": ["Música", "Futebol"]},
+    {"id": 2, "gostos": ["Leitura", "Cinema"]},
+    {"id": 3, "gostos": ["Viagem"]},
+    {"id": 4, "gostos": ["Dança", "Esportes"]},
+    {"id": 5, "gostos": ["Tecnologia", "Culinária"]},
+    {"id": 6, "gostos": ["Moda"]}
+]
+
+resultado = adicionar_gostos(pessoas, gostos)
+
+print(resultado)
