@@ -1,3 +1,4 @@
+#QUESTAO 02
 def adicionar_gostos(pessoas: list, gostos: list):
    
     mapa_gostos = {g["id"]: g["gostos"] for g in gostos}
